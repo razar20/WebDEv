@@ -1,0 +1,261 @@
+:root{
+    --text-primary:  white;
+    --text-secondary: #57ddc2;
+    --bg-primary: #15202b;
+    --bg-secondary:rgb(32, 46, 59);
+    --border-color:#303841;
+    --hover-text-color: rgb(116, 248, 112);
+    --font-name: Helvetica
+}
+
+/* *{
+    box-sizing: border-box;
+} */
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container label {
+    cursor: pointer;
+}
+
+.checkbox-container input[type='checkbox'] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-container label::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    border-radius: .15em;
+    margin-right: .5em;
+    border: .05em solid var(--border-color);
+}
+
+.checkbox-container label:hover::before,
+.checkbox-container input[type='checkbox']:hover + label::before {
+    background-color: greenyellow;
+}
+
+.checkbox-container input[type='checkbox']:checked + label::before {
+    content: '\002714';
+    background-color: #35E070;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+} 
+
+body{
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary);
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*{
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    position: sticky;
+    top: 0;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-primary);
+    border-bottom: 0.5px solid var(--border-color);
+}
+
+.btn-active{
+    transition: 0.1s ease-in;
+    border-radius: 125px;
+    color: rgb(113, 255, 108);
+    text-decoration: none;
+    font-size: 20px;
+    background-color: rgb(32, 46, 59);
+}
+
+.nav-links{
+    display: flex;
+    background-color: var(--bg-primary);
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    /* margin-left: auto  // pushes the navs to the right */
+}
+
+
+.nav-links li a{
+    padding: 10px 20px;
+    border-radius: 125px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.nav-links li a:hover{
+    transition: 0.1s ease-in;
+    border-radius: 125px;
+    color: var(--hover-text-color);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px){
+    .line{
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+    }
+    
+    nav{
+        position: relative;
+    }
+
+    .hamburger{
+        position: absolute;
+        cursor: pointer;
+        right:5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+    }
+
+    .nav-links{
+        position: fixed;
+        background-color: var(--bg-primary);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+    }
+}
+#logout-btn{
+    border: none;
+    border-style: none;
+    text-decoration: none;
+    padding: 10px;
+    color: var(--text-primary);
+    background: var(--bg-secondary) ;
+    border-radius: 125px;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+    margin-right: 40px;
+    font-weight: 500!important;
+}
+
+#logout-btn:hover{
+    text-decoration: none;
+    padding: 10px;
+    color: var(--hover-text-color);
+    border-radius: 125px;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+    margin-right: 40px;
+    transition: 0.1s ease-in;
+    color: greenyellow;
+}
+
+body::-webkit-scrollbar{
+    width: 0.4rem;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #686868;
+}
+
+
+.wrapper{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: 1.5fr 3fr 2fr ;
+    /* grid-gap:1em; */
+    /* Heights */
+    grid-auto-rows: minmax(100px, auto); /* Means that all the divs will be min 100px but if content goes beyond that, they can stretch as well*/
+}
+
+.wrapper > aside:first-child{
+    box-sizing: border-box;
+    background-color: var(--bg-primary);
+}
+
+.wrapper > aside:last-child{
+    padding: 1em;
+    background-color: var(--bg-primary);
+}
+
+.wrapper > main{
+    border: 1px solid;
+    border-color: var(--border-color);
+    border-top: none;
+    padding: 1em;
+    background: var(--bg-secondary)
+}
+
+/* FIXED THE SIDEBAR LEFT CONTENT AND NOT THE SIDEBAR*/
+.left-links{
+    position: fixed;
+    display: block;
+    width: 23%;
+}
+.left-links li a{
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    padding:0.8em 0em 0.8em 2em ;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+.left-links li a:hover{
+    text-decoration: none;
+    display: block;
+    color: var(--hover-text-color);
+    background-color: var(--bg-secondary);
+}
+#create-btn{
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    border: none;
+    border-style: none;
+    text-align: center;
+    width: 70%;
+    margin:20px auto;
+    border-radius: 125px;
+    background-color: var(--bg-secondary);
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 400!important;
+    color: var(--text-primary);
+}
+#create-btn:hover{
+    background-color:rgb(29, 42, 54);
+    color: var(--hover-text-color);
+}
+.avatar{
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+
+/*  TEST */

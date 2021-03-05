@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url("final.css");
+        @import url('base-grid.css');
+    </style>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="final.js">
+    <link rel="stylesheet" href="final.css">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- HAMBURGER BUTTON on media query -->
+            <a href="#"><img style="margin-left: 20px;" src="images/logo1.png" width="65" alt=""></a>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <!-- NAVBAR LINKS -->
+            <ul class="nav-links">
+                <li><a class="btn-active" href="#"><i class="fa fa-home" style="font-size: 25px;"></i></a></li>
+                <li><a href="#"><i class="fa fa-tag"></i></a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+            <!-- LOGOUT button -->
+            <form action="{% url 'logout' %}" method="POST">
+                <button id="logout-btn" type="submit">Logout</button>
+            </form>
+            
+        </nav>
+    </header>
+    <div style="height: 10vh;"></div>
+
+
+    <section class="wrapper">
+        <aside>
+            <div class="left-links">
+                <ul>
+                    <li><a href=""> 
+                        <b><i class="fa fa-users" style="margin-right: 20px;"></i> Groups</a></b>
+                    </li>
+                    <li>
+                        <b><a href=""><i class="fa fa-map-pin" style="margin-right: 20px;"></i>Saved Locations</a></b>
+                    </li>
+                    <li>
+                        <b><a href=""><i class="fa fa-comment" style="margin-right: 20px;"></i>Chats</a></b>
+                    </li>
+                    <li>
+                        <b><a href=""><i class="fa fa-calendar" style="margin-right: 20px;"></i>Events</a></b>
+                    </li>
+                </ul>   
+               <a href="" style="text-decoration: none;" id="create-btn"> <b>Post</b></a> 
+            </div>
+        </aside>
+        <main style="font-size: 50px;">
+            <!-- Checkbox -->
+            <div class="checkbox-container">
+                <input type="checkbox" id="cb1">
+                <label for="cb1">Sports</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="cb2">
+                <label for="cb12">Music</label2>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="cb3">
+                <label for="cb3">Reading</label3>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="cb4">
+                <label for="cb4">Acting</label4>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="cb5">
+                <label for="cb5">Dancing</label5>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="cb6">
+                <label for="cb6">Reading</label6>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="cb7">
+                <label for="cb7">Yoga</label7>
+            </div><div class="checkbox-container">
+                <input type="checkbox" id="cb8">
+                <label for="cb8">Cooking</label8>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="cb4">
+                <label for="cb9">Entertainment</label9>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="cb10">
+                <label for="cb10">Business</label10>
+            </div>   
+        </main> 
+        <aside>
+            Checkbox: <input type="Sports" id="cb1" onclick="myFunction()">
+            Checkbox: <input type="Music" id="cb2" onclick="myFunction()">
+            Checkbox: <input type="Reading" id="cb3" onclick="myFunction()">
+            Checkbox: <input type="Acting" id="cb4" onclick="myFunction()">
+            Checkbox: <input type="Dancing" id="cb5" onclick="myFunction()">
+            Checkbox: <input type="Reading" id="cb6" onclick="myFunction()">
+            Checkbox: <input type="Yoga" id="cb7" onclick="myFunction()">
+            Checkbox: <input type="Cooking" id="cb8" onclick="myFunction()">
+            Checkbox: <input type="Entertainment" id="cb9" onclick="myFunction()">
+            Checkbox: <input type="Business" id="cb10" onclick="myFunction()">
+            <p id="text" style="display:none">Checkbox is CHECKED!</p>
+        </aside>    
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>
